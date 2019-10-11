@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trackCardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:layout_marginBottom="50dp"
+    app:cardBackgroundColor="@android:color/darker_gray">
+
+    <RelativeLayout
+        android:layout_width="407dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/trackImageView"
+            android:layout_width="115dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/trackImage"
+            app:srcCompat="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/txvTrackName"
+            android:layout_width="198dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="50dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
