@@ -2,6 +2,7 @@ package com.jmo.artists.models;
 
 
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.Expose;
 
 import java.util.List;
 
@@ -9,49 +10,74 @@ import java.util.List;
 public class Track {
 
     @SerializedName("name")
+    @Expose
     private String name;
-
     @SerializedName("duration")
+    @Expose
     private String duration;
-
-    @SerializedName("url")
-    private String url;
-
-    @SerializedName("artist")
-    private Artist artist;
-
+    @SerializedName("listeners")
+    @Expose
+    private String listeners;
     @SerializedName("mbid")
+    @Expose
     private String mbid;
-
+    @SerializedName("url")
+    @Expose
+    private String url;
     @SerializedName("streamable")
+    @Expose
     private Streamable streamable;
-    //private String imageUrl;
-
+    @SerializedName("artist")
+    @Expose
+    private Artist artist;
+    @SerializedName("image")
+    @Expose
     private List<Image> image;
+    @SerializedName("@attr")
+    @Expose
+    private Attr attr;
 
-    public Track(String name, String duration, String url, Artist artist,/*, String imageUrl*/String mbid, Streamable streamable, List<Image> image) {
+
+    public Track(String name, String duration, String listeners, String mbid, String url, Streamable streamable, Artist artist, List<Image> image, Attr attr) {
+        super();
         this.name = name;
         this.duration = duration;
+        this.listeners = listeners;
+        this.mbid = mbid;
         this.url = url;
-        this.artist = artist;
-        this.mbid = mbid;
         this.streamable = streamable;
-        //this.imageUrl = imageUrl;
+        this.artist = artist;
         this.image = image;
-        this.mbid = mbid;
+        this.attr = attr;
     }
-
 
     public String getName() {
         return name;
     }
 
+
     public String getDuration() {
         return duration;
     }
 
+
+    public String getListeners() {
+        return listeners;
+    }
+
+
+    public String getMbid() {
+        return mbid;
+    }
+
+
     public String getUrl() {
         return url;
+    }
+
+
+    public Streamable getStreamable() {
+        return streamable;
     }
 
 
@@ -59,85 +85,20 @@ public class Track {
         return artist;
     }
 
+
+
     public List<Image> getImage() {
         return image;
     }
 
-    public String getMbid() {
-        return mbid;
+
+
+    public Attr getAttr() {
+        return attr;
     }
 
-    public Streamable getStreamable() {
-        return streamable;
-    }
-
-    /*public String getImageUrl() {
-        return imageUrl;
-    }*/
 
 
 }
 
 
-class Artist {
-    @SerializedName("name")
-    private String name;
-
-    @SerializedName("url")
-    private String url;
-
-    public Artist(String name, String url) {
-        this.name = name;
-        this.url = url;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getName() {
-        return name;
-    }
-}
-
-
-class Image {
-
-    @SerializedName("#text")
-    private String text;
-
-    @SerializedName("#size")
-    private String size;
-
-    public String getText() {
-        return text;
-    }
-
-
-    public String getSize() {
-        return size;
-    }
-
-}
-
-
-class Streamable {
-    @SerializedName("#text")
-    private String text;
-
-    @SerializedName("fulltrack")
-    private String fulltrack;
-
-    Streamable(String text, String fulltrack) {
-        this.text = text;
-        this.fulltrack = fulltrack;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getFulltrack() {
-        return fulltrack;
-    }
-}

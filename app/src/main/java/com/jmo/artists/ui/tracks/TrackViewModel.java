@@ -28,6 +28,7 @@ public class TrackViewModel extends ViewModel {
     }
 
     private void loadTracks(){
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://ws.audioscrobbler.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -41,14 +42,16 @@ public class TrackViewModel extends ViewModel {
             @Override
             public void onResponse(Call<Tracks> call, Response<Tracks> response) {
 
-                Tracks resp = response.body();
-                trackList.setValue(resp);
+                if(response.isSuccessful()){
+                    Tracks resp = response.body();
+                    trackList.setValue(resp);
+                }
+
+
             }
 
             @Override
             public void onFailure(Call<Tracks> call, Throwable t) {
-                int val = 0;
-                Throwable tr = t;
             }
         });
     }

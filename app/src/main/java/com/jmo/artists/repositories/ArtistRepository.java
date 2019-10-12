@@ -10,6 +10,4 @@ public class ArtistRepository {
         this.okHttpClient = new OkHttpClient();
     }
 
-
-    //public
 }
