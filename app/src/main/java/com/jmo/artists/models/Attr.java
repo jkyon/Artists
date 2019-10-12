@@ -10,10 +10,10 @@ public class Attr {
     private String rank;
 
 
-    public Attr(String rank) {
-        super();
+    public void setRank(String rank) {
         this.rank = rank;
     }
+
 
     public String getRank() {
         return rank;

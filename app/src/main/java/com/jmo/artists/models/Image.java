@@ -8,14 +8,18 @@ public class Image {
     @SerializedName("#text")
     @Expose
     private String text;
+
+
     @SerializedName("size")
     @Expose
     private String size;
 
 
-    public Image(String text, String size) {
-        super();
+    public void setText(String text) {
         this.text = text;
+    }
+
+    public void setSize(String size) {
         this.size = size;
     }
 

@@ -16,10 +16,15 @@ public class Artist {
     private String url;
 
 
-    public Artist(String name, String mbid, String url) {
-        super();
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setMbid(String mbid) {
         this.mbid = mbid;
+    }
+
+    public void setUrl(String url) {
         this.url = url;
     }
 

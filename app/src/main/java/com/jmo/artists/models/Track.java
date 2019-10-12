@@ -33,23 +33,49 @@ public class Track {
     @SerializedName("image")
     @Expose
     private List<Image> image;
+
     @SerializedName("@attr")
     @Expose
     private Attr attr;
 
 
-    public Track(String name, String duration, String listeners, String mbid, String url, Streamable streamable, Artist artist, List<Image> image, Attr attr) {
-        super();
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public void setListeners(String listeners) {
         this.listeners = listeners;
+    }
+
+    public void setMbid(String mbid) {
         this.mbid = mbid;
+    }
+
+    public void setUrl(String url) {
         this.url = url;
+    }
+
+    public void setStreamable(Streamable streamable) {
         this.streamable = streamable;
+    }
+
+    public void setArtist(Artist artist) {
         this.artist = artist;
+    }
+
+    public void setImage(List<Image> image) {
         this.image = image;
+    }
+
+    public void setAttr(Attr attr) {
         this.attr = attr;
     }
+
+
 
     public String getName() {
         return name;

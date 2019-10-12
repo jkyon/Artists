@@ -30,7 +30,7 @@ public class TrackViewModel extends ViewModel {
     private void loadTracks(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://ws.audioscrobbler.com/")
+                .baseUrl("http://ws.audioscrobbler.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

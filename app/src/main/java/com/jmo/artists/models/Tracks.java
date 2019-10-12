@@ -7,11 +7,10 @@ import java.util.List;
 public class Tracks {
 
     @SerializedName("track")
-    private List<Track> track;
+    List<Track> track;
 
-    public Tracks(List<Track> tracks) {
-
-        this.track = tracks;
+    public void setTrack(List<Track> track) {
+        this.track = track;
     }
 
     public List<Track> getTracks() {

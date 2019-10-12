@@ -20,6 +20,7 @@ import com.jmo.artists.models.Tracks;
 import com.jmo.artists.ui.adapters.TrackAdapter;
 import com.jmo.artists.ui.artists.ArtistViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TracksFragment extends Fragment {
@@ -42,7 +43,11 @@ public class TracksFragment extends Fragment {
         TrackViewModel.getTracks().observe(this, new Observer<Tracks>() {
             @Override
             public void onChanged(Tracks tracks) {
-                adapter = new TrackAdapter(getActivity(), tracks.getTracks());
+                List<Track> trackList = tracks.getTracks();
+                if(trackList == null || trackList.isEmpty()){
+                    trackList = new ArrayList<>();
+                }
+                adapter = new TrackAdapter(getActivity(), trackList);
                 recyclerView.setAdapter(adapter);
             }
         });
